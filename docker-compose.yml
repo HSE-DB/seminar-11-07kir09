@@ -6,6 +6,10 @@ services:
       POSTGRES_USER: student
       POSTGRES_PASSWORD: student
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
+      - pgdata_workshop:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  pgdata_workshop:
